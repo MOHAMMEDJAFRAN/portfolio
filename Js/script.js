@@ -67,3 +67,108 @@ const showMoreBtn = document.querySelector("#show-more-btn");
                 showMoreBtn.textContent = "Show more";
             }
         });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".nav-item");
+    const activeIndicator = document.getElementById("activeIndicator");
+    const navBar = document.getElementById("navBar");
+    
+    function updateIndicator() {
+        const activeLink = document.querySelector(".nav-item.active");
+        if (activeLink) {
+            activeIndicator.style.width = `${activeLink.offsetWidth}px`;
+            activeIndicator.style.left = `${activeLink.offsetLeft}px`;
+        }
+    }
+
+    // Add click event to update active link
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.forEach(l => l.classList.remove("active"));
+            this.classList.add("active");
+            updateIndicator();
+        });
+    });
+
+    // Update active state on scroll
+    window.addEventListener("scroll", function () {
+        let fromTop = window.scrollY + 80;
+        navLinks.forEach(link => {
+            let section = document.querySelector(link.getAttribute("href"));
+            if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+                navLinks.forEach(l => l.classList.remove("active"));
+                link.classList.add("active");
+                updateIndicator();
+            }
+        });
+
+        // Sticky Navbar Effect
+        if (window.scrollY > 50) {
+            navBar.classList.add("scroll-active");
+        } else {
+            navBar.classList.remove("scroll-active");
+        }
+    });
+
+    // Initialize Indicator
+    updateIndicator();
+});
+
+// Toggle Mobile Menu
+function toggleMenu() {
+    let menu = document.getElementById("mobileMenu");
+    menu.style.right = menu.style.right === "0px" ? "-100%" : "0px";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".nav-item");
+  const activeIndicator = document.getElementById("activeIndicator");
+  const navBar = document.getElementById("navBar");
+  
+  function updateIndicator() {
+      const activeLink = document.querySelector(".nav-item.active");
+      if (activeLink) {
+          activeIndicator.style.width = `${activeLink.offsetWidth}px`;
+          activeIndicator.style.left = `${activeLink.offsetLeft}px`;
+      }
+  }
+
+  // Add click event to update active link
+  navLinks.forEach(link => {
+      link.addEventListener("click", function () {
+          navLinks.forEach(l => l.classList.remove("active"));
+          this.classList.add("active");
+          updateIndicator();
+      });
+  });
+
+  // Update active state on scroll
+  window.addEventListener("scroll", function () {
+      let fromTop = window.scrollY + 80;
+      navLinks.forEach(link => {
+          let section = document.querySelector(link.getAttribute("href"));
+          if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+              navLinks.forEach(l => l.classList.remove("active"));
+              link.classList.add("active");
+              updateIndicator();
+          }
+      });
+
+      // Sticky Navbar Effect
+      if (window.scrollY > 50) {
+          navBar.classList.add("scroll-active");
+      } else {
+          navBar.classList.remove("scroll-active");
+      }
+  });
+
+  // Initialize Indicator
+  updateIndicator();
+});
+
+// Toggle Mobile Menu
+function toggleMenu() {
+  let menu = document.getElementById("mobileMenu");
+  menu.style.right = menu.style.right === "0px" ? "-100%" : "0px";
+}

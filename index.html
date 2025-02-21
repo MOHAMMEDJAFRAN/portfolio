@@ -22,7 +22,7 @@
 
     <!-- Full background gradient image -->
     <div class="fixed inset-0 -z-10 dark:hidden">
-        <img src="./src/img/bg.jpg" alt="" class="object-cover w-full h-full">
+        <img src="./src/img/bk.jpg" alt="" class="object-cover w-full h-full">
 
         
     </div>
@@ -32,13 +32,14 @@
     <img src="./src/img/logo4.png" class="w-40 ml-5 cursor-pointer hidden dark:block">
 
     <!-- Navigation Links for Desktop -->
-    <ul id="navlinks" class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 font-Ovo bg-opacity-50 shadow-sm
-    dark:border dark:border-white/50 dark:bg-transparent">
-        <li><a class="hover:text-blue" href="#top">Home</a></li>
-        <li><a href="#aboutme">About me</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact me</a></li>
+    <ul id="navlinks" class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 font-Ovo bg-opacity-50 shadow-sm dark:border dark:border-white/50 dark:bg-transparent relative">
+        <li><a href="#top" class="nav-item">Home</a></li>
+        <li><a href="#aboutme" class="nav-item">About me</a></li>
+        <li><a href="#skills" class="nav-item">Skills</a></li>
+        <li><a href="#projects" class="nav-item">Projects</a></li>
+        <li><a href="#contact" class="nav-item">Contact me</a></li>
+        <!-- Active Indicator -->
+        <div id="activeIndicator" class="absolute bottom-0 h-1 bg-blue-500 transition-all duration-300 rounded-full"></div>
     </ul>
 
     <!-- Theme Toggle and Contact Button -->
@@ -372,6 +373,8 @@
         </div>
 
         
+
+        
     </div>
 
     <!-- Additional Project Cards (Initially Hidden) -->
@@ -386,15 +389,17 @@
                 <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] transition-colors duration-300 group-hover:bg-rose-400 group-hover:shadow-md">
                     <a href="https://www.figma.com/design/9zaEBX49bPDLHnFTMmZTOi/Untitled?node-id=6-204&node-type=canvas&t=3uUEOnA8NYTBikyl-0"><img src="./src/img/figma icon.png" alt="" class="w-5"> </a>
                 </div>
+           
             </div>
         </div>
+
         <!-- E-commerce Website -->
         <div class="aspect-square bg-[url('./src/img/tht.jpg')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group" data-aos="zoom-in" data-aos-delay="200">
             <div class="bg-white w-11/12 rounded-md absolute -bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
                 <div>
                     <h2 class="font-semibold dark:text-black">E-commerce Website</h2>
                     <p class="text-sm text-gray-700">THT Printer Shop</p>
-                    <p class="text-sm text-black-700 dark:text-black">HTML | CSS | JavaScript | Php | MySql</p>
+                    <p class="text-sm text-black-700 dark:text-black">HTML | CSS | JavaScript | Php</p>
                 </div>
                 <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-purple-300 transition">
                     <a href="http://thtprinters.42web.io"><img src="./src/img/internet.png" alt="" class="w-5"></a>
@@ -402,7 +407,9 @@
             </div>
         </div>
     </div>
-
+    
+    
+    
     
         <!-- More hidden project cards can be added here -->
     </div>
